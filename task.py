@@ -1,7 +1,5 @@
 from datetime import datetime, timedelta
 from collections import UserDict
-from random import randint
-import calendar
 
 class Field:
     def __init__(self, value):
@@ -11,8 +9,7 @@ class Field:
         return str(self.value)
 
 class Name(Field):
-    # реалізація класу
-		pass
+   		pass
 
 class Phone(Field):
     def __init__(self, value):
@@ -227,37 +224,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-    
-# Створення нової адресної книги
-    # Приклад використання
-address_book = AddressBook() 
-
-    # Створення запису для John
-john_record = Record("John")
-john_record.add_phone("1234567890")
-john_record.add_phone("5555555555")
-
-    # Додавання запису John до адресної книги
-address_book.add_record(john_record)
-
-    # Створення та додавання нового запису для Jane
-jane_record = Record("Jane")
-jane_record.add_phone("9876543210")
-address_book.add_record(jane_record)
-
-    # Виведення всіх записів у книзі
-     
-print(address_book)
-
-    # Знаходження та редагування телефону для John
-john = address_book.find("John")
-john.edit_phone("1234567890", "1112223333")
-
-print(john)  # Виведення: Contact name: John, phones: 1112223333; 5555555555
-
-    # Пошук конкретного телефону у записі John
-found_phone = john.find_phone("5555555555")
-print(f"{john.name}: {found_phone}")  # Виведення: John: 5555555555
-
-    # Видалення запису Jane
-address_book.delete("Jane")
